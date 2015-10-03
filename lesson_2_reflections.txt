@@ -1,0 +1,10 @@
+Q: What happens when you initialize a repository? Why do you need to do it?
+A: When initializing a repository, Git will search within it for files to track
+   and build their origin point. This is required in order for Git to track the
+   changes when creating the first commit on this new repository.
+Q: How is the staging area different from the working directory and the
+   repository? What value do you think it offers?
+A: Staging area is the temporary location before committing files from working
+   directory to the repository. I'm not sure the exact answer, but my guess is
+   that it keeps the files write-locked before commit so that there won't be
+   any last minute changes that will not be captured by the commit.
