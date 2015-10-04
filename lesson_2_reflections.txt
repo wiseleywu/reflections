@@ -8,3 +8,44 @@ A: Staging area is the temporary location before committing files from working
    directory to the repository. I'm not sure the exact answer, but my guess is
    that it keeps the files write-locked before commit so that there won't be
    any last minute changes that will not be captured by the commit.
+Q: How can you use the staging area to make sure you have one commit per logical
+   change?
+A: Once you have make one logical change, add all the files that are related to
+   the logical change to the staging area before proceeding to work on other
+   unrelated changes. By doing this, you will only commit files that are in
+   the staging area, making your commit containing only one logical change.
+Q: What are some situations when branches would be helpful in keeping your
+   history organized? How would branches help?
+A: One situation would be when you would like to introduce experimental features
+   without compromising existing functions. Another situation would be when you
+   would like to start a foreign language version of the existing codes. Branches
+   help by retaining the original codes (master) parallel to the branched
+   versions of the codes, making accessing either branch extremely easy. (learned
+   from the video - master branch is production quality, doesn't break always
+   work, while development branch where active work is taking place. Should start
+   a new branch when working on a new feature/portion of the code)
+Q: How do the diagrams help you visualize the branch structure?
+A: The diagrams show that branch structure could behave like an evolution tree,
+   where sometimes code could branch out and develop differently, like animals.
+   But the biggest difference is that even when your code branches out, you
+   could still merge them back together in the future, which you can't do with
+   animals.
+Q: What is the result of merging two branches together? Why do we represent it
+   in the diagram the way we do?
+A: By merging two branches together, you retain the commits history from both
+   branches and the respective changes made in both branches. It was represented
+   as two lines which split at some points in the past merged back together, and
+   this is to show that with the new master commit branch it's still possible to
+   trace back commits that were made in the other branch.
+Q: What are the pros and cons of Git's automatic merging vs. always doing merge
+   manually?
+A: Automatic merging is convenient when the merge of two branches contain
+   numerous differences, as it would be too tedious to check each difference
+   individually. However, it's also possible that there are hidden conflicts
+   between two branches that wasn't detected by Git - in this case the conflict
+   could potentially break the newly merged code. On the other hand, manual
+   merge could prevent situation like this from happening. But this would be
+   very difficult when the two branches are so different to the point that there
+   are thousands of places where codes have changed. To get the best in both
+   worlds, each branch should be distinctly different from each other, and their
+   changes should not overlap from one another.
