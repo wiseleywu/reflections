@@ -19,3 +19,39 @@ A: Branch exists solely within a single repository, and it's used when you would
    work on someone else's repository and like to give credit where credit is
    due - you will be able to fork (or copy) someone's GitHub repository into
    your own GitHub account (while retaining that repository's full history)
+Q: What is the benefit of having a copy of the last known state of the remote
+   stored locally?
+A: When you're in a collaborative environment, the state of the remote will not
+   always be the same even if you didn't push anything into it. If you happen
+   to be offline or forgot to pull from remote regularly, soon your local copy
+   of the remote will no longer be up to date. This becomes a problem when you
+   start making commits on your local branch (not the local copy of the remote).
+   Once you're back online or decide to pull from GitHub, there will be a
+   conflict since there will be changes on both your local branch and the remote
+   branch. By having a copy of the last known state of the remote, Git will be
+   able to know the difference between the two different branch and create
+   conflict message properly (similar to when merging two local branches
+   together).
+Q: How would you collaborate without using Git or GitHub? What would be easier,
+   and what would be harder?
+A: It would be easy to not use Git for collaborative work, as the alternative
+   GitHub is built specifically for this kind of work. However, it would be
+   more difficult to collaborate without GitHub. One solution is to use Dropbox
+   along with Git, where the repository is synced across different devices via
+   Dropbox and different users could still access all Git functionality as the
+   data should be synced along with the repository as well.
+Q: When would you want to make changes in a separate branch rather than directly
+   in master? What benefits does each approach have?
+A: When you're working on a new part of your code, and you would still like to
+   retain master's functionality for demo purpose. The benefit of this approach
+   is that even if your new code somehow breaks everything, you could still use
+   the version history to debug. Most importantly, master remain accessible
+   without doing detached head - therefore you could still maintain production
+   quality code while a new branch is completely non-functional. The benefit of
+   the second approach (working directly with master) is that it makes online
+   collaboration easier since any conflicted change could be resolved by a
+   push/pull and then resolve the conflict directly. On the other hand, working
+   on a separate branch while trying to pull from an updated master (not worked
+   on by you) require you to pull changes into your local master branch, merge
+   the local master into your new branch, then push your branch to the remote
+   before finally merging your branch into master.
